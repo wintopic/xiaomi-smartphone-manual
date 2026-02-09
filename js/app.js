@@ -67,7 +67,8 @@ function initializeApplication() {
     FontSizeController.initialize();
     ImageViewer.initialize();
     IconSystem.initialize();
-    
+    LazyLoadManager.initialize();
+
     console.log(`📱 Smartphone User Guide v${APP_VERSION} initialized`);
 }
 
@@ -1119,9 +1120,107 @@ const IconSystem = {
 // Global Exports - 全局导出
 // =============================================================================
 
+// =============================================================================
+// Lazy Load Manager - 图片懒加载管理器
+// =============================================================================
+
+/**
+ * @namespace LazyLoadManager
+ * @description 图片懒加载管理器，使用 Intersection Observer API
+ */
+const LazyLoadManager = {
+    /** @type {IntersectionObserver} 观察器实例 */
+    observer: null,
+
+    /**
+     * 初始化懒加载管理器
+     * @method initialize
+     */
+    initialize() {
+        // 检查浏览器是否支持 Intersection Observer
+        if (!('IntersectionObserver' in window)) {
+            // 不支持则直接加载所有图片
+            this.loadAllImages();
+            return;
+        }
+
+        // 创建观察器
+        this.observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    this.loadImage(entry.target);
+                    this.observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            rootMargin: '50px 0px', // 提前50px开始加载
+            threshold: 0.01
+        });
+
+        // 观察所有图片
+        this.observeImages();
+    },
+
+    /**
+     * 观察所有图片元素
+     * @method observeImages
+     */
+    observeImages() {
+        const images = document.querySelectorAll('img[data-src], .guide-image');
+
+        images.forEach(img => {
+            // 如果图片没有data-src，将src转移到data-src
+            if (!img.dataset.src && img.src) {
+                img.dataset.src = img.src;
+                // 使用占位符或模糊背景
+                img.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"%3E%3C/svg%3E';
+                img.classList.add('lazy-image');
+            }
+            this.observer.observe(img);
+        });
+    },
+
+    /**
+     * 加载单个图片
+     * @method loadImage
+     * @param {HTMLImageElement} img - 图片元素
+     */
+    loadImage(img) {
+        const src = img.dataset.src;
+        if (!src) return;
+
+        // 创建新图片对象预加载
+        const tempImg = new Image();
+        tempImg.onload = () => {
+            img.src = src;
+            img.classList.remove('lazy-image');
+            img.classList.add('lazy-loaded');
+        };
+        tempImg.onerror = () => {
+            console.warn('Failed to load image:', src);
+            img.classList.add('lazy-error');
+        };
+        tempImg.src = src;
+    },
+
+    /**
+     * 加载所有图片（用于不支持 Intersection Observer 的浏览器）
+     * @method loadAllImages
+     */
+    loadAllImages() {
+        const images = document.querySelectorAll('img[data-src]');
+        images.forEach(img => this.loadImage(img));
+    }
+};
+
+// =============================================================================
+// Global Exports - 全局导出
+// =============================================================================
+
 // Expose to global scope for inline event handlers
 window.ApplicationController = ApplicationController;
 window.ImageViewer = ImageViewer;
 window.FontSizeController = FontSizeController;
 window.IconSystem = IconSystem;
+window.LazyLoadManager = LazyLoadManager;
 window.APP_VERSION = APP_VERSION;
