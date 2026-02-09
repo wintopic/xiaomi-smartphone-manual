@@ -1,0 +1,900 @@
+/* ============================================
+   智能手机使用指南 - 响应式样式 (现代化版本)
+   ============================================ */
+
+/* 大屏幕 (>1400px) */
+@media screen and (min-width: 1401px) {
+    :root {
+        --sidebar-width: 340px;
+    }
+
+    .main-content {
+        padding: 48px;
+    }
+
+    .content-section {
+        padding: 44px;
+    }
+}
+
+/* 中等大屏幕 (1200px - 1400px) */
+@media screen and (min-width: 1201px) and (max-width: 1400px) {
+    :root {
+        --sidebar-width: 320px;
+    }
+
+    .main-content {
+        padding: 40px;
+    }
+
+    .content-section {
+        padding: 40px;
+    }
+}
+
+/* 中等屏幕 (992px - 1200px) */
+@media screen and (max-width: 1200px) {
+    :root {
+        --sidebar-width: 280px;
+    }
+    
+    .logo-text {
+        font-size: 1.1rem;
+        white-space: nowrap;
+    }
+    
+    .logo-text::before {
+        content: attr(data-short-text);
+    }
+    
+    .logo-text {
+        font-size: 0;
+    }
+    
+    .logo-text::before {
+        font-size: 1.1rem;
+    }
+    
+    .search-box input {
+        width: 220px;
+    }
+    
+    .search-box input:focus {
+        width: 260px;
+    }
+    
+    .main-content {
+        padding: 28px;
+    }
+    
+    .content-section {
+        padding: 32px;
+    }
+}
+
+/* 平板设备 (768px - 991px) */
+@media screen and (max-width: 991px) {
+    :root {
+        --header-height: 60px;
+        --sidebar-width: 0;
+    }
+    
+    .menu-toggle {
+        display: flex;
+    }
+    
+    .logo-text {
+        font-size: 1.1rem;
+    }
+    
+    .search-box {
+        display: none;
+        position: absolute;
+        top: calc(var(--header-height) + 8px);
+        right: 16px;
+        background: var(--bg-primary);
+        padding: 12px;
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow-lg);
+        border: 1px solid var(--border-color);
+        z-index: 1001;
+    }
+    
+    .search-box.active {
+        display: flex;
+    }
+    
+    .search-box input {
+        width: 240px;
+        padding-right: 44px;
+    }
+    
+    .search-box .search-btn {
+        position: absolute;
+        right: 18px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    .search-box .search-btn:hover {
+        transform: translateY(-50%) scale(1.05);
+    }
+    
+    .font-size-controls {
+        display: none;
+    }
+    
+    .font-toggle-mobile,
+    .search-toggle-mobile {
+        display: flex;
+    }
+    
+    .sidebar {
+        transform: translateX(-100%);
+        width: 300px;
+        box-shadow: var(--shadow-xl);
+        z-index: 1100;
+    }
+    
+    .sidebar.active {
+        transform: translateX(0);
+    }
+    
+    .main-content {
+        margin-left: 0;
+        padding: 24px;
+    }
+    
+    .content-section {
+        padding: 28px;
+        border-radius: var(--border-radius);
+    }
+    
+    .section-title {
+        font-size: 1.6rem;
+    }
+    
+    .step-item {
+        padding: 20px;
+    }
+    
+    .feature-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .settings-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .tips-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .intro-card {
+        padding: 28px;
+    }
+    
+    /* 图片画廊 */
+    .image-gallery {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+    
+    .gallery-image-wrapper {
+        aspect-ratio: 1;
+    }
+    
+    /* 灯箱 */
+    .lightbox-nav {
+        width: 52px;
+        height: 52px;
+        font-size: 1.4rem;
+    }
+    
+    .lightbox-prev {
+        left: 16px;
+    }
+    
+    .lightbox-next {
+        right: 16px;
+    }
+}
+
+/* 大屏手机 (576px - 767px) */
+@media screen and (max-width: 767px) {
+    :root {
+        --header-height: 56px;
+    }
+    
+    .header {
+        padding: 0 16px;
+    }
+    
+    .logo {
+        font-size: 1.2rem;
+        gap: 12px;
+    }
+    
+    .logo-icon {
+        width: 2rem;
+        height: 2rem;
+    }
+    
+    .logo-icon svg {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .theme-toggle {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+    }
+    
+    .main-content {
+        padding: 20px;
+    }
+    
+    .content-section {
+        padding: 24px;
+        border-radius: var(--border-radius-sm);
+        margin-bottom: 20px;
+    }
+    
+    .section-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+        padding-bottom: 16px;
+    }
+    
+    .section-icon {
+        font-size: 2.4rem;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .section-intro {
+        padding: 16px 20px;
+        font-size: 1rem;
+    }
+    
+    .step-item {
+        flex-direction: column;
+        gap: 16px;
+        padding: 20px;
+    }
+    
+    .step-header {
+        margin-bottom: 12px;
+    }
+    
+    .step-number {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        font-size: 1.1rem;
+    }
+    
+    .step-header h4 {
+        font-size: 1.2rem;
+    }
+    
+    .intro-card {
+        padding: 24px;
+    }
+    
+    .intro-card h3 {
+        font-size: 1.2rem;
+    }
+    
+    .feature-list {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .feature-list li {
+        font-size: 1rem;
+    }
+    
+    .phone-screen {
+        width: 100%;
+        max-width: 280px;
+        padding: 24px;
+    }
+    
+    .sms-screen {
+        width: 100%;
+        max-width: 320px;
+    }
+    
+    .settings-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+    
+    .setting-card {
+        padding: 20px;
+    }
+    
+    .setting-icon {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+    }
+    
+    .tips-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .tip-card {
+        padding: 24px;
+    }
+    
+    .bottom-nav {
+        padding: 20px 0;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+    
+    .nav-btn {
+        padding: 12px 22px;
+        font-size: 0.95rem;
+    }
+    
+    .page-indicator {
+        font-size: 0.95rem;
+        order: -1;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 8px;
+    }
+    
+    .modal-content {
+        max-height: 90vh;
+        margin: 16px;
+    }
+    
+    /* 图片画廊 */
+    .image-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+    
+    .gallery-image-wrapper {
+        aspect-ratio: 1;
+    }
+    
+    /* 图片查看器 */
+    .image-modal-zoom-in,
+    .image-modal-zoom-out {
+        display: none;
+    }
+
+    .image-modal-close {
+        top: 16px;
+        right: 16px;
+        width: 52px;
+        height: 52px;
+        background: rgba(30, 41, 59, 0.95);
+        border: 2px solid rgba(255, 255, 255, 0.4);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+    }
+
+    .image-modal-close svg {
+        width: 26px;
+        height: 26px;
+        stroke-width: 2.5;
+    }
+    
+    /* 灯箱 */
+    .lightbox-nav {
+        width: 48px;
+        height: 48px;
+        font-size: 1.3rem;
+    }
+    
+    .lightbox-prev {
+        left: 12px;
+    }
+    
+    .lightbox-next {
+        right: 12px;
+    }
+    
+    .lightbox-image-wrapper {
+        max-width: 92%;
+    }
+    
+    .lightbox-caption {
+        padding: 12px 20px;
+        font-size: 0.95rem;
+    }
+    
+    .lightbox-close {
+        top: 16px;
+        right: 16px;
+        width: 48px;
+        height: 48px;
+    }
+}
+
+/* 小屏手机 (<576px) */
+@media screen and (max-width: 480px) {
+    html {
+        font-size: 15px;
+    }
+    
+    .header {
+        padding: 0 12px;
+    }
+    
+    .logo {
+        font-size: 1.15rem;
+        gap: 10px;
+    }
+    
+    .logo-icon {
+        width: 1.9rem;
+        height: 1.9rem;
+    }
+    
+    .logo-text {
+        font-size: 0;
+        white-space: nowrap;
+    }
+    
+    .logo-text::before {
+        content: attr(data-short-text);
+        font-size: 1.15rem;
+    }
+    
+    .menu-toggle {
+        padding: 8px;
+    }
+    
+    .main-content {
+        padding: 16px;
+    }
+    
+    .content-section {
+        padding: 20px;
+        margin-bottom: 16px;
+        border-radius: var(--border-radius-xs);
+    }
+    
+    .section-header {
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+    
+    .section-icon {
+        font-size: 2rem;
+    }
+    
+    .section-title {
+        font-size: 1.35rem;
+    }
+    
+    .section-intro {
+        padding: 14px 16px;
+        font-size: 0.95rem;
+    }
+    
+    .step-guide {
+        gap: 16px;
+    }
+    
+    .step-item {
+        padding: 16px;
+        gap: 14px;
+    }
+    
+    .step-header h4 {
+        font-size: 1.1rem;
+    }
+    
+    .step-content p {
+        font-size: 0.95rem;
+    }
+    
+    .phone-screen {
+        padding: 20px;
+        border-radius: 24px;
+    }
+    
+    .key {
+        font-size: 1.2rem;
+    }
+    
+    .phone-display {
+        font-size: 1.3rem;
+        padding: 14px;
+    }
+    
+    .sms-screen {
+        padding: 16px;
+    }
+    
+    .sms-header {
+        font-size: 1rem;
+    }
+    
+    .settings-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .faq-question {
+        padding: 18px;
+        font-size: 1rem;
+    }
+    
+    .faq-answer {
+        padding: 0 18px 18px 50px;
+    }
+    
+    .bottom-nav {
+        padding: 16px 0;
+    }
+    
+    .nav-btn {
+        flex: 1;
+        justify-content: center;
+        min-width: 90px;
+        padding: 12px 16px;
+    }
+    
+    .nav-text {
+        display: none;
+    }
+    
+    .intro-card {
+        padding: 20px;
+    }
+    
+    .intro-card h3 {
+        font-size: 1.15rem;
+        margin-bottom: 16px;
+    }
+    
+    .intro-tip {
+        padding: 18px;
+    }
+    
+    .modal-content {
+        max-width: 100%;
+        margin: 12px;
+        max-height: calc(100vh - 24px);
+        border-radius: var(--border-radius);
+    }
+    
+    .modal-header {
+        padding: 18px 20px;
+    }
+    
+    .modal-body {
+        padding: 20px;
+    }
+    
+    /* 图片画廊 */
+    .image-gallery {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .gallery-image-wrapper {
+        aspect-ratio: 16/10;
+    }
+    
+    /* 灯箱 */
+    .lightbox-nav {
+        display: none;
+    }
+    
+    .lightbox-caption {
+        bottom: 20px;
+        padding: 10px 18px;
+        font-size: 0.9rem;
+    }
+    
+    .lightbox-close {
+        top: 12px;
+        right: 12px;
+        width: 44px;
+        height: 44px;
+    }
+    
+    /* 图片查看器 */
+    .image-modal-wrapper {
+        padding: 8px;
+    }
+    
+    .image-modal-caption {
+        font-size: 1rem;
+        padding: 12px 20px;
+    }
+}
+
+/* 超小屏手机 (<360px) */
+@media screen and (max-width: 360px) {
+    html {
+        font-size: 14px;
+    }
+    
+    .main-content {
+        padding: 12px;
+    }
+    
+    .content-section {
+        padding: 16px;
+    }
+    
+    .section-title {
+        font-size: 1.25rem;
+    }
+    
+    .step-number {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+    }
+    
+    .nav-btn {
+        padding: 10px 12px;
+    }
+}
+
+/* 横向屏幕模式 */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+    .header {
+        height: 52px;
+    }
+    
+    .sidebar {
+        top: 52px;
+        height: calc(100vh - 52px);
+    }
+    
+    .main-content {
+        margin-top: 52px;
+        min-height: calc(100vh - 52px);
+        padding: 20px;
+    }
+    
+    .content-section {
+        padding: 24px;
+    }
+    
+    .step-item {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    
+    .modal-content {
+        max-height: 92vh;
+    }
+    
+    /* 隐藏一些非关键元素以节省空间 */
+    .section-intro {
+        padding: 14px 18px;
+    }
+}
+
+/* 打印样式 */
+@media print {
+    .header,
+    .sidebar,
+    .bottom-nav,
+    .search-results,
+    .modal,
+    .overlay,
+    .reading-progress {
+        display: none !important;
+    }
+    
+    .main-content {
+        margin: 0;
+        padding: 20px;
+    }
+    
+    .content-section {
+        box-shadow: none;
+        break-inside: avoid;
+        page-break-inside: avoid;
+        border: 1px solid #ddd;
+        margin-bottom: 20px;
+    }
+    
+    .section-header {
+        border-bottom-color: #000;
+    }
+    
+    body {
+        background: white;
+        color: black;
+        font-size: 12pt;
+    }
+    
+    .guide-image {
+        max-width: 100%;
+        page-break-inside: avoid;
+    }
+    
+    .image-with-caption {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+}
+
+/* 减少动画偏好 */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    html {
+        scroll-behavior: auto;
+    }
+    
+    .progress-fill {
+        transition: none !important;
+    }
+}
+
+/* 深色模式自动切换 */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --primary-color: #60a5fa;
+        --primary-light: #93c5fd;
+        --primary-dark: #3b82f6;
+        --primary-gradient: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+        
+        --bg-primary: #0f172a;
+        --bg-secondary: #1e293b;
+        --bg-tertiary: #334155;
+        --bg-sidebar: #1e293b;
+        --bg-hover: #334155;
+        
+        --text-primary: #f8fafc;
+        --text-secondary: #cbd5e1;
+        --text-muted: #64748b;
+        
+        --border-color: #334155;
+        --border-light: #1e293b;
+        --shadow-color: rgba(0, 0, 0, 0.3);
+    }
+}
+
+/* 高对比度模式 */
+@media (prefers-contrast: high) {
+    :root {
+        --border-color: #000;
+        --text-secondary: #333;
+        --shadow-sm: none;
+        --shadow: none;
+        --shadow-md: none;
+        --shadow-lg: none;
+        --shadow-xl: none;
+    }
+    
+    [data-theme="dark"] {
+        --border-color: #fff;
+        --text-secondary: #ddd;
+    }
+    
+    .content-section,
+    .step-item,
+    .tip-card,
+    .setting-card,
+    .faq-item {
+        border-width: 2px;
+    }
+    
+    .nav-link.active {
+        outline: 2px solid currentColor;
+        outline-offset: 2px;
+    }
+}
+
+/* 触摸设备优化 */
+@media (hover: none) and (pointer: coarse) {
+    .nav-link:hover,
+    .step-item:hover,
+    .tip-card:hover,
+    .setting-card:hover,
+    .gallery-item:hover {
+        transform: none;
+    }
+    
+    .nav-link {
+        padding: 14px 16px;
+    }
+    
+    .nav-link:active {
+        background: var(--bg-hover);
+    }
+    
+    .key {
+        min-height: 48px;
+        min-width: 48px;
+    }
+    
+    .demo-btn,
+    .nav-btn,
+    .app-install-btn,
+    .send-btn,
+    .call-btn {
+        min-height: 48px;
+    }
+    
+    /* 增大触摸目标 */
+    .search-btn {
+        min-width: 36px;
+        min-height: 36px;
+    }
+    
+    .theme-toggle {
+        min-width: 44px;
+        min-height: 44px;
+    }
+    
+    /* 图片画廊触摸优化 */
+    .gallery-overlay {
+        opacity: 1;
+        background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%);
+        padding-bottom: 16px;
+    }
+    
+    .gallery-zoom {
+        width: 44px;
+        height: 44px;
+        font-size: 1.5rem;
+    }
+}
+
+/* iPad 和类似平板 */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .sidebar {
+        width: 260px;
+    }
+    
+    .main-content {
+        margin-left: 260px;
+    }
+    
+    .tips-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .image-gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* 折叠屏设备 */
+@media screen and (max-width: 280px) {
+    .logo-icon {
+        font-size: 1.2rem;
+    }
+    
+    .theme-toggle {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+    }
+    
+    .content-section {
+        padding: 14px;
+    }
+    
+    .section-title {
+        font-size: 1.15rem;
+    }
+}

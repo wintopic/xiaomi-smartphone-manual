@@ -1,0 +1,909 @@
+/* ============================================
+   老年用户友好样式 (现代化版本)
+   大字体、高对比度、清晰易读
+   ============================================ */
+
+/* 字体大小控制 */
+:root {
+    --font-size-base: 18px;
+    --font-size-large: 20px;
+    --font-size-xlarge: 24px;
+    --line-height: 1.8;
+    --letter-spacing: 0.3px;
+}
+
+/* 特大字体模式 */
+[data-font-size="xlarge"] {
+    --font-size-base: 24px;
+    --font-size-large: 28px;
+    --font-size-xlarge: 32px;
+    --line-height: 1.9;
+}
+
+/* 大字体模式（默认） */
+[data-font-size="large"] {
+    --font-size-base: 20px;
+    --font-size-large: 24px;
+    --font-size-xlarge: 28px;
+    --line-height: 1.8;
+}
+
+/* 标准字体 */
+[data-font-size="normal"] {
+    --font-size-base: 16px;
+    --font-size-large: 18px;
+    --font-size-xlarge: 20px;
+    --line-height: 1.6;
+}
+
+/* 全局字体设置 */
+body {
+    font-size: var(--font-size-base);
+    line-height: var(--line-height);
+    letter-spacing: var(--letter-spacing);
+}
+
+/* 字体大小控制按钮现代化 */
+.font-size-controls {
+    display: flex;
+    gap: 6px;
+    padding: 4px 6px;
+    background: var(--bg-secondary);
+    border-radius: 28px;
+    border: 1px solid var(--border-color);
+    align-items: center;
+    height: 44px;
+}
+
+.font-btn {
+    width: 36px;
+    height: 36px;
+    border: none;
+    background: transparent;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+    padding: 0;
+    line-height: 1;
+}
+
+.font-btn-icon {
+    width: 26px;
+    height: 26px;
+}
+
+.font-btn:hover {
+    background: var(--bg-hover);
+    color: var(--primary-color);
+    transform: scale(1.1);
+}
+
+.font-btn.active {
+    background: var(--primary-gradient);
+    color: white;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+/* 图片与文字配合展示现代化 */
+.image-with-caption {
+    margin: 28px 0;
+    background: var(--bg-primary);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    border: 2px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.image-with-caption:hover {
+    border-color: var(--primary-light);
+    box-shadow: var(--shadow-xl);
+    transform: translateY(-4px);
+}
+
+.guide-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    cursor: zoom-in;
+    transition: transform 0.4s ease;
+}
+
+.guide-image:hover {
+    transform: scale(1.02);
+}
+
+.image-caption {
+    padding: 18px 24px;
+    background: var(--bg-primary);
+    font-size: var(--font-size-large);
+    font-weight: 600;
+    color: var(--text-primary);
+    text-align: center;
+    border-top: 2px solid var(--border-color);
+}
+
+/* 步骤说明样式现代化 */
+.step-description {
+    font-size: var(--font-size-large);
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+    padding: 20px 24px;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.08) 0%, rgba(59, 130, 246, 0.03) 100%);
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--primary-color);
+}
+
+/* 重点提示框现代化 */
+.key-points {
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    border: 2px solid #f59e0b;
+    border-radius: var(--border-radius-lg);
+    padding: 28px;
+    margin-top: 28px;
+    box-shadow: var(--shadow);
+}
+
+[data-theme="dark"] .key-points {
+    background: linear-gradient(135deg, #451a03 0%, #78350f 100%);
+    border-color: #f59e0b;
+}
+
+.key-points h5 {
+    font-size: var(--font-size-large);
+    color: #92400e;
+    margin-bottom: 18px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+[data-theme="dark"] .key-points h5 {
+    color: #fcd34d;
+}
+
+.key-points h5::before {
+    content: "⚠️";
+    font-size: 1.3em;
+}
+
+.key-points ul {
+    list-style: none;
+    padding: 0;
+}
+
+.key-points li {
+    font-size: var(--font-size-base);
+    padding: 14px 0;
+    padding-left: 40px;
+    position: relative;
+    border-bottom: 1px dashed rgba(0,0,0,0.1);
+}
+
+.key-points li:last-child {
+    border-bottom: none;
+}
+
+.key-points li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--secondary-color);
+    font-weight: 900;
+    font-size: 1.4em;
+    width: 32px;
+    height: 32px;
+    background: rgba(16, 185, 129, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 操作步骤框现代化 */
+.instruction-box {
+    background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 100%);
+    border: 2px solid var(--primary-color);
+    border-radius: var(--border-radius-lg);
+    padding: 28px;
+    margin-top: 28px;
+    box-shadow: var(--shadow);
+}
+
+[data-theme="dark"] .instruction-box {
+    background: linear-gradient(135deg, #0c4a6e 0%, #164e63 100%);
+}
+
+.instruction-title {
+    font-size: var(--font-size-large);
+    font-weight: 800;
+    color: var(--primary-dark);
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+[data-theme="dark"] .instruction-title {
+    color: #93c5fd;
+}
+
+.instruction-title::before {
+    content: "📋";
+    font-size: 1.2em;
+}
+
+.instruction-box ol {
+    padding-left: 32px;
+}
+
+.instruction-box li {
+    font-size: var(--font-size-base);
+    padding: 12px 0;
+    line-height: 1.9;
+}
+
+.instruction-box strong {
+    color: var(--primary-dark);
+    font-weight: 700;
+}
+
+[data-theme="dark"] .instruction-box strong {
+    color: #93c5fd;
+}
+
+/* 提示框现代化 */
+.tip-box {
+    background: linear-gradient(135deg, #d1fae5 0%, #ecfdf5 100%);
+    border: 2px solid var(--secondary-color);
+    border-radius: var(--border-radius-lg);
+    padding: 24px 28px;
+    margin-top: 28px;
+    font-size: var(--font-size-base);
+    box-shadow: var(--shadow);
+}
+
+[data-theme="dark"] .tip-box {
+    background: linear-gradient(135deg, #064e3b 0%, #065f46 100%);
+}
+
+.tip-box strong {
+    color: #065f46;
+    font-size: var(--font-size-large);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+[data-theme="dark"] .tip-box strong {
+    color: #6ee7b7;
+}
+
+.tip-box strong::before {
+    content: "💡";
+}
+
+/* 解锁方式卡片现代化 */
+.unlock-methods {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 28px;
+}
+
+.method-card {
+    background: var(--bg-primary);
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius-lg);
+    padding: 28px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+}
+
+.method-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-xl);
+}
+
+.method-icon {
+    font-size: 3.5rem;
+    display: block;
+    margin-bottom: 18px;
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+}
+
+.method-card h5 {
+    font-size: var(--font-size-large);
+    color: var(--text-primary);
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.method-card p {
+    font-size: var(--font-size-base);
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+/* 手势指南现代化 */
+.gesture-guide {
+    background: var(--bg-secondary);
+    border-radius: var(--border-radius-lg);
+    padding: 28px;
+    margin-top: 28px;
+    border: 1px solid var(--border-color);
+}
+
+.gesture-guide h5 {
+    font-size: var(--font-size-large);
+    margin-bottom: 24px;
+    color: var(--text-primary);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.gesture-guide h5::before {
+    content: "👆";
+}
+
+.gesture-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+}
+
+.gesture-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px;
+    background: var(--bg-primary);
+    border-radius: var(--border-radius);
+    border: 2px solid var(--border-color);
+    transition: all 0.25s ease;
+}
+
+.gesture-item:hover {
+    border-color: var(--primary-light);
+    transform: translateX(6px);
+}
+
+.gesture-icon {
+    font-size: 2.2rem;
+    min-width: 56px;
+    text-align: center;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+.gesture-name {
+    font-weight: 700;
+    font-size: var(--font-size-base);
+    color: var(--text-primary);
+    min-width: 90px;
+}
+
+.gesture-desc {
+    font-size: var(--font-size-base);
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* 键盘指南现代化 */
+.phone-keypad-guide {
+    background: linear-gradient(145deg, #1e293b 0%, #0f172a 100%);
+    border-radius: 24px;
+    padding: 28px;
+    max-width: 320px;
+    margin: 24px auto;
+    box-shadow: var(--shadow-xl);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.keypad-row {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.keypad-key {
+    width: 76px;
+    height: 76px;
+    background: rgba(255,255,255,0.1);
+    border: 2px solid rgba(255,255,255,0.15);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.6rem;
+    font-weight: 700;
+    transition: all 0.2s ease;
+}
+
+.keypad-key:hover {
+    background: var(--primary-color);
+    transform: scale(1.08);
+}
+
+.keypad-key small {
+    font-size: 0.75rem;
+    font-weight: 400;
+    opacity: 0.8;
+    margin-top: 2px;
+}
+
+/* 通话按钮指南现代化 */
+.call-buttons-guide {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin: 28px 0;
+    flex-wrap: wrap;
+}
+
+.call-btn-demo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 24px 32px;
+    border-radius: var(--border-radius-lg);
+    border: 3px solid;
+    min-width: 140px;
+    transition: all 0.25s ease;
+    box-shadow: var(--shadow);
+}
+
+.call-btn-demo.green {
+    background: linear-gradient(135deg, #d1fae5 0%, #ecfdf5 100%);
+    border-color: var(--secondary-color);
+}
+
+.call-btn-demo.green:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
+}
+
+.call-btn-demo.red {
+    background: linear-gradient(135deg, #fee2e2 0%, #fef2f2 100%);
+    border-color: var(--danger-color);
+}
+
+.call-btn-demo.red:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(239, 68, 68, 0.3);
+}
+
+.call-btn-demo .btn-icon {
+    font-size: 2.8rem;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+.call-btn-demo .btn-text {
+    font-size: var(--font-size-base);
+    font-weight: 700;
+}
+
+/* 短信表单指南现代化 */
+.sms-form-guide {
+    background: var(--bg-secondary);
+    border-radius: var(--border-radius-lg);
+    padding: 28px;
+    margin-top: 24px;
+    border: 1px solid var(--border-color);
+}
+
+.form-field {
+    margin-bottom: 24px;
+}
+
+.form-field label {
+    display: block;
+    font-size: var(--font-size-large);
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--text-primary);
+}
+
+.input-demo, .textarea-demo {
+    background: var(--bg-primary);
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius-sm);
+    padding: 16px;
+    font-size: var(--font-size-base);
+    color: var(--text-muted);
+    width: 100%;
+}
+
+.textarea-demo {
+    min-height: 120px;
+}
+
+/* 发送按钮指南 */
+.send-button-guide {
+    display: flex;
+    justify-content: center;
+    margin: 28px 0;
+}
+
+.send-btn-demo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 44px;
+    background: var(--primary-gradient);
+    color: white;
+    border-radius: 32px;
+    font-size: var(--font-size-large);
+    font-weight: 700;
+    box-shadow: var(--shadow-lg);
+    transition: all 0.25s ease;
+}
+
+.send-btn-demo:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-xl), 0 0 20px rgba(59, 130, 246, 0.3);
+}
+
+/* 图片查看器优化现代化 */
+.image-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(15, 23, 42, 0.95);
+    z-index: 4000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    backdrop-filter: blur(8px);
+}
+
+.image-modal-content {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.image-modal-wrapper {
+    overflow: hidden;
+    max-height: 80vh;
+    background: var(--bg-primary);
+    border-radius: var(--border-radius-lg);
+    padding: 12px;
+    box-shadow: var(--shadow-xl);
+    cursor: grab;
+    position: relative;
+}
+
+.image-modal-wrapper:active {
+    cursor: grabbing;
+}
+
+.image-modal-wrapper img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--border-radius-sm);
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.image-modal-wrapper img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--border-radius-sm);
+}
+
+.image-modal-close,
+.image-modal-zoom-in,
+.image-modal-zoom-out {
+    position: fixed;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    background: rgba(30, 41, 59, 0.9);
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s ease;
+    z-index: 4001;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.1);
+    padding: 0;
+    line-height: 1;
+}
+
+.image-modal-close {
+    top: 24px;
+    right: 24px;
+}
+
+.image-modal-zoom-in {
+    bottom: 100px;
+    right: 24px;
+}
+
+.image-modal-zoom-out {
+    bottom: 36px;
+    right: 24px;
+}
+
+.image-modal-close svg,
+.image-modal-zoom-in svg,
+.image-modal-zoom-out svg {
+    width: 28px;
+    height: 28px;
+    stroke: white;
+    stroke-width: 2.5;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+}
+
+.image-modal-close:hover,
+.image-modal-zoom-in:hover,
+.image-modal-zoom-out:hover {
+    background: var(--primary-color);
+    border-color: rgba(255, 255, 255, 0.5);
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0 6px 24px rgba(59, 130, 246, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.2);
+}
+
+.image-modal-close:active,
+.image-modal-zoom-in:active,
+.image-modal-zoom-out:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 12px rgba(59, 130, 246, 0.4);
+}
+
+.image-modal-caption {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 28px;
+    background: rgba(15, 23, 42, 0.85);
+    border-radius: 24px;
+    color: white;
+    font-size: var(--font-size-base);
+    font-weight: 500;
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    max-width: 80%;
+    text-align: center;
+    z-index: 4001;
+}
+
+.image-modal-caption:empty {
+    display: none;
+}
+
+/* 章节标题优化 */
+.section-title {
+    font-size: 2.4rem;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+}
+
+/* 步骤标题优化 */
+.step-header h4 {
+    font-size: 1.7rem;
+    font-weight: 800;
+}
+
+/* 导航菜单优化 */
+.nav-link {
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    padding: 14px 18px;
+}
+
+/* FAQ样式优化 */
+.faq-question {
+    font-size: var(--font-size-large);
+    font-weight: 700;
+    padding: 22px;
+}
+
+.faq-answer {
+    font-size: var(--font-size-base);
+}
+
+.faq-answer ol {
+    padding-left: 32px;
+}
+
+.faq-answer li {
+    padding: 12px 0;
+    line-height: 1.9;
+}
+
+/* 技巧卡片优化 */
+.tip-card {
+    border: 2px solid var(--border-color);
+    padding: 28px;
+}
+
+.tip-header h4 {
+    font-size: 1.5rem;
+}
+
+.tip-card p {
+    font-size: var(--font-size-base);
+    line-height: 1.9;
+}
+
+/* 介绍图片区域 */
+.intro-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin: 24px 0;
+}
+
+/* 响应式优化 */
+@media screen and (max-width: 768px) {
+    .font-size-controls {
+        display: none;
+    }
+    
+    .image-modal-zoom-in,
+    .image-modal-zoom-out {
+        display: none;
+    }
+    
+    .image-modal-close {
+        top: 16px;
+        right: 16px;
+        width: 52px;
+        height: 52px;
+        font-size: 1.4rem;
+        background: rgba(0, 0, 0, 0.7);
+    }
+    
+    .image-modal-wrapper {
+        padding: 8px;
+    }
+    
+    .image-modal-caption {
+        font-size: var(--font-size-base);
+        padding: 14px 24px;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .step-header h4 {
+        font-size: 1.4rem;
+    }
+    
+    .key-points,
+    .instruction-box,
+    .tip-box {
+        padding: 20px;
+    }
+    
+    .gesture-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .gesture-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .gesture-name {
+        min-width: auto;
+    }
+    
+    .call-buttons-guide {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .call-btn-demo {
+        width: 100%;
+        max-width: 200px;
+    }
+    
+    .unlock-methods {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 高对比度模式支持 */
+@media (prefers-contrast: high) {
+    .image-with-caption {
+        border-width: 3px;
+    }
+    
+    .key-points,
+    .instruction-box,
+    .tip-box {
+        border-width: 3px;
+    }
+    
+    .step-description {
+        border-left-width: 6px;
+    }
+    
+    .method-card,
+    .gesture-item {
+        border-width: 3px;
+    }
+    
+    .font-btn.active {
+        outline: 2px solid currentColor;
+        outline-offset: 2px;
+    }
+}
+
+/* 触摸设备优化 */
+@media (hover: none) and (pointer: coarse) {
+    .image-with-caption:hover {
+        transform: none;
+    }
+    
+    .guide-image:hover {
+        transform: none;
+    }
+    
+    .keypad-key:hover {
+        transform: none;
+    }
+    
+    .call-btn-demo:hover {
+        transform: none;
+    }
+    
+    .send-btn-demo:hover {
+        transform: none;
+    }
+    
+    .gesture-item:hover {
+        transform: none;
+    }
+    
+    .method-card:hover {
+        transform: none;
+    }
+    
+    /* 增大触摸目标 */
+    .font-btn {
+        min-width: 48px;
+        min-height: 48px;
+    }
+    
+    .keypad-key {
+        min-width: 64px;
+        min-height: 64px;
+    }
+}

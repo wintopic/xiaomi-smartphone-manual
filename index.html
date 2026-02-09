@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智能手机使用指南 - 专为老年人设计</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/elderly-friendly.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body data-font-size="large">
+    <!-- 顶部导航栏 -->
+    <header class="header">
+        <div class="header-left">
+            <button class="menu-toggle" id="menuToggle" aria-label="切换菜单">
+                <span class="menu-line menu-line-top"></span>
+                <span class="menu-line menu-line-middle"></span>
+                <span class="menu-line menu-line-bottom"></span>
+            </button>
+            <h1 class="logo">
+                <span class="logo-icon">📱</span>
+                <span class="logo-text" data-short-text="使用指南">智能手机使用指南</span>
+            </h1>
+        </div>
+        <div class="header-right">
+            <div class="font-size-controls">
+                <button class="font-btn" data-size="normal" title="标准字体">
+                    <svg class="font-btn-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><text x="6" y="18" font-size="16" font-weight="600" fill="currentColor" stroke="none">A</text></svg>
+                </button>
+                <button class="font-btn active" data-size="large" title="大字体">
+                    <svg class="font-btn-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><text x="4" y="18" font-size="16" font-weight="600" fill="currentColor" stroke="none">A</text><text x="15" y="14" font-size="11" font-weight="600" fill="currentColor" stroke="none">+</text></svg>
+                </button>
+                <button class="font-btn" data-size="xlarge" title="特大字体">
+                    <svg class="font-btn-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><text x="2" y="18" font-size="16" font-weight="600" fill="currentColor" stroke="none">A</text><text x="13" y="13" font-size="10" font-weight="600" fill="currentColor" stroke="none">+</text><text x="18" y="9" font-size="10" font-weight="600" fill="currentColor" stroke="none">+</text></svg>
+                </button>
+            </div>
+            <button class="font-toggle-mobile" id="fontToggleMobile" aria-label="字体设置" data-size="large">
+                <svg class="font-icon-svg font-icon-normal" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><text x="6" y="18" font-size="16" font-weight="400" fill="currentColor" stroke="none">A</text></svg>
+                <svg class="font-icon-svg font-icon-large" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><text x="4" y="18" font-size="16" font-weight="400" fill="currentColor" stroke="none">A</text><text x="15" y="14" font-size="11" font-weight="400" fill="currentColor" stroke="none">+</text></svg>
+                <svg class="font-icon-svg font-icon-xlarge" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><text x="2" y="18" font-size="16" font-weight="400" fill="currentColor" stroke="none">A</text><text x="13" y="13" font-size="10" font-weight="400" fill="currentColor" stroke="none">+</text><text x="18" y="9" font-size="10" font-weight="400" fill="currentColor" stroke="none">+</text></svg>
+            </button>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="搜索指南内容..." aria-label="搜索">
+                <button class="search-btn" id="searchBtn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg></button>
+            </div>
+            <button class="search-toggle-mobile" id="searchToggleMobile" aria-label="搜索">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg>
+            </button>
+            <button class="theme-toggle" id="themeToggle" aria-label="切换主题">
+                <span class="theme-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- 侧边栏导航 -->
+    <aside class="sidebar" id="sidebar">
+        <nav class="nav-menu">
+            <div class="nav-section">
+                <h3 class="nav-title">开始使用</h3>
+                <ul class="nav-list">
+                    <li><a href="#intro" class="nav-link active" data-section="intro">📘 指南介绍</a></li>
+                    <li><a href="#contents" class="nav-link" data-section="contents">📋 目录</a></li>
+                </ul>
+            </div>
+            <div class="nav-section">
+                <h3 class="nav-title">日常篇</h3>
+                <ul class="nav-list">
+                    <li><a href="#icons" class="nav-link" data-section="icons">🔣 认识图标</a></li>
+                    <li><a href="#zoom" class="nav-link" data-section="zoom">🔍 放大功能</a></li>
+                    <li><a href="#simple-mode" class="nav-link" data-section="simple-mode">📱 极简模式</a></li>
+                    <li><a href="#contacts" class="nav-link" data-section="contacts">👥 储存联系人</a></li>
+                    <li><a href="#save-calls" class="nav-link" data-section="save-calls">📞 保存通话记录</a></li>
+                    <li><a href="#apps" class="nav-link" data-section="apps">📲 软件下载卸载</a></li>
+                    <li><a href="#wallpaper" class="nav-link" data-section="wallpaper">🖼️ 设置壁纸</a></li>
+                    <li><a href="#xiaoai" class="nav-link" data-section="xiaoai">🎙️ 小爱同学</a></li>
+                    <li><a href="#battery-save" class="nav-link" data-section="battery-save">🔋 省电模式</a></li>
+                    <li><a href="#flashlight" class="nav-link" data-section="flashlight">🔦 手电筒</a></li>
+                    <li><a href="#clean" class="nav-link" data-section="clean">🧹 清理手机垃圾</a></li>
+                </ul>
+            </div>
+            <div class="nav-section">
+                <h3 class="nav-title">出行篇</h3>
+                <ul class="nav-list">
+                    <li><a href="#navigation" class="nav-link" data-section="navigation">🗺️ 查询路线</a></li>
+                    <li><a href="#transport" class="nav-link" data-section="transport">🚌 乘坐公交地铁</a></li>
+                    <li><a href="#store" class="nav-link" data-section="store">🏪 查询小米门店</a></li>
+                </ul>
+            </div>
+            <div class="nav-section">
+                <h3 class="nav-title">拍照篇</h3>
+                <ul class="nav-list">
+                    <li><a href="#camera" class="nav-link" data-section="camera">📷 相机使用</a></li>
+                    <li><a href="#photo-tips" class="nav-link" data-section="photo-tips">📸 拍照小技巧</a></li>
+                </ul>
+            </div>
+            <div class="nav-section">
+                <h3 class="nav-title">微信篇</h3>
+                <ul class="nav-list">
+                    <li><a href="#wechat-friends" class="nav-link" data-section="wechat-friends">👥 添加好友</a></li>
+                    <li><a href="#wechat-group" class="nav-link" data-section="wechat-group">💬 发起群聊</a></li>
+                    <li><a href="#wechat-dnd" class="nav-link" data-section="wechat-dnd">🔕 消息免打扰</a></li>
+                    <li><a href="#wechat-blacklist" class="nav-link" data-section="wechat-blacklist">🚫 黑名单功能</a></li>
+                    <li><a href="#wechat-call" class="nav-link" data-section="wechat-call">📹 视频语音通话</a></li>
+                    <li><a href="#wechat-redpacket" class="nav-link" data-section="wechat-redpacket">🧧 发红包</a></li>
+                </ul>
+            </div>
+            <div class="nav-section">
+                <h3 class="nav-title">支付篇</h3>
+                <ul class="nav-list">
+                    <li><a href="#wechat-pay" class="nav-link" data-section="wechat-pay">💳 微信支付</a></li>
+                    <li><a href="#alipay" class="nav-link" data-section="alipay">💰 支付宝支付</a></li>
+                </ul>
+            </div>
+            <div class="nav-section">
+                <h3 class="nav-title">安全篇</h3>
+                <ul class="nav-list">
+                    <li><a href="#block" class="nav-link" data-section="block">🛡️ 来电短信拦截</a></li>
+                    <li><a href="#guard" class="nav-link" data-section="guard">🔒 安全守护</a></li>
+                    <li><a href="#anti-fraud" class="nav-link" data-section="anti-fraud">⚠️ 国家反诈APP</a></li>
+                    <li><a href="#gov-service" class="nav-link" data-section="gov-service">🏛️ 国务院客户端</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="reading-progress">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <span class="progress-text" id="progressText">阅读进度: 0%</span>
+        </div>
+    </aside>
+
+    <!-- 主内容区域 -->
+    <main class="main-content" id="mainContent">
+        <!-- 搜索结果区域 -->
+        <div class="search-results" id="searchResults" style="display: none;">
+            <div class="search-header">
+                <h2>搜索结果</h2>
+                <button class="close-search" id="closeSearch">✕</button>
+            </div>
+            <div class="search-content" id="searchContent"></div>
+        </div>
+
+        <!-- 指南内容 -->
+        <div class="content-wrapper" id="contentWrapper">
+            <!-- 介绍部分 -->
+            <section class="content-section" id="intro" data-section="intro">
+                <div class="section-header">
+                    <span class="section-icon">📘</span>
+                    <h2 class="section-title">欢迎使用智能手机使用指南</h2>
+                </div>
+                <div class="section-content">
+                    <div class="intro-card">
+                        <h3>本指南专为老年朋友设计，帮助您：</h3>
+                        <ul class="feature-list">
+                            <li>📱 轻松掌握智能手机的基本操作</li>
+                            <li>👥 学会储存联系人、拨打电话</li>
+                            <li>📲 下载和卸载应用软件</li>
+                            <li>📷 使用相机拍照，记录美好时光</li>
+                            <li>💬 使用微信与亲友聊天、视频通话</li>
+                            <li>💳 学会微信支付和支付宝支付</li>
+                            <li>🛡️ 保护手机安全，防范诈骗</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="intro-images">
+                        <div class="image-with-caption">
+                            <img src="images/extracted/送给爸妈的礼物智能手机使用指南.png" alt="指南封面" class="guide-image" onclick="ImageViewer.open(this.src)">
+                            <p class="image-caption">📖 指南封面 - 送给爸妈的礼物</p>
+                        </div>
+                    </div>
+
+                    <div class="intro-tip">
+                        <strong>💡 温馨提示：</strong>
+                        <ul>
+                            <li>点击左侧菜单选择您想学习的内容</li>
+                            <li>使用上方搜索框快速查找功能</li>
+                            <li>点击"A+"按钮可以调整字体大小</li>
+                            <li>点击图片可以放大查看细节</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 目录 -->
+            <section class="content-section" id="contents" data-section="contents" style="display: none;">
+                <div class="section-header">
+                    <span class="section-icon">📋</span>
+                    <h2 class="section-title">目录</h2>
+                </div>
+                <div class="section-content">
+                    <div class="intro-images">
+                        <div class="image-with-caption">
+                            <img src="images/extracted/目录1.png" alt="目录1" class="guide-image" onclick="ImageViewer.open(this.src)">
+                            <p class="image-caption">📋 目录 - 第1页</p>
+                        </div>
+                        <div class="image-with-caption">
+                            <img src="images/extracted/目录2.png" alt="目录2" class="guide-image" onclick="ImageViewer.open(this.src)">
+                            <p class="image-caption">📋 目录 - 第2页</p>
+                        </div>
+                        <div class="image-with-caption">
+                            <img src="images/extracted/目录3.png" alt="目录3" class="guide-image" onclick="ImageViewer.open(this.src)">
+                            <p class="image-caption">📋 目录 - 第3页</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 日常篇 - 认识图标 -->
+            <section class="content-section" id="icons" data-section="icons" style="display: none;">
+                <div class="section-header">
+                    <span class="section-icon">🔣</span>
+                    <h2 class="section-title">认识图标</h2>
+                </div>
+                <div class="section-content">
+                    <div class="section-intro">
+                        <p>了解手机桌面上常见图标的含义，让您使用手机更加得心应手。</p>
+                    </div>
+                    <div class="image-with-caption">
+                        <img src="images/extracted/认识图标.png" alt="认识图标" class="guide-image" onclick="ImageViewer.open(this.src)">
+                        <p class="image-caption">🔣 手机常见图标说明</p>
+                    </div>
+                    <div class="image-with-caption">
+                        <img src="images/extracted/刷视频时的图标.png" alt="刷视频时的图标" class="guide-image" onclick="ImageViewer.open(this.src)">
+                        <p class="image-caption">▶️ 看视频时的常用图标</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 日常篇 - 放大功能 -->
+            <section class="content-section" id="zoom" data-section="zoom" style="display: none;">
+                <div class="section-header">
+                    <span class="section-icon">🔍</span>
+                    <h2 class="section-title">放大功能</h2>
+                </div>
+                <div class="section-content">
+                    <div class="section-intro">
+                        <p>学会放大字体、音量、图标和图片，让手机使用更轻松。</p>
+                    </div>
+                    <div class="step-guide">
+                        <div class="step-item" data-step="1">
+                            <div class="step-header">
+                                <div class="step-number">1</div>
+                                <h4>放大字体</h4>
+                            </div>
+                            <div class="step-content">
+                                <div class="image-with-caption">
+                                    <img src="images/extracted/如何放大-放大字体1.png" alt="放大字体1" class="guide-image" onclick="ImageViewer.open(this.src)">
+                                    <p class="image-caption">🔍 放大字体 - 步骤1</p>
+                                </div>
+                                <div class="image-with-caption">
+                                    <img src="images/extracted/如何放大-放大字体2.png" alt="放大字体2" class="guide-image" onclick="ImageViewer.open(this.src)">
+                                    <p class="image-caption">🔍 放大字体 - 步骤2</p>
+                                </div>
+                                <div class="image-with-caption">
+                                    <img src="images/extracted/如何放大-放大字体3.png" alt="放大字体3" class="guide-image" onclick="ImageViewer.open(this.src)">
+                                    <p class="image-caption">🔍 放大字体 - 步骤3</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step-item" data-step="2">
+                            <div class="step-header">
+                                <div class="step-number">2</div>
+                                <h4>放大音量</h4>
+                            </div>
+                            <div class="step-content">
+                                <div class="image-with-caption">
+                                    <img src="images/extracted/如何放大-放大音量.png" alt="放大音量" class="guide-image" onclick="ImageViewer.open(this.src)">
+                                    <p class="image-caption">🔊 调节音量大小</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step-item" data-step="3">
+                            <div class="step-header">
+                                <div class="step-number">3</div>
+                                <h4>放大图标</h4>
+                            </div>
+                            <div class="step-content">
+                                <div class="image-with-caption">
+                                    <img src="images/extracted/如何放大-放大图标1.png" alt="放大图标1" class="guide-image" onclick="ImageViewer.open(this.src)">
+                                    <p class="image-caption">🔍 放大图标 - 步骤1</p>
+                                </div>
+                                <div class="image-with-caption">
+                                    <img src="images/extracted/如何放大-放大图标2.png" alt="放大图标2" class="guide-image" onclick="ImageViewer.open(this.src)">
+                                    <p class="image-caption">🔍 放大图标 - 步骤2</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step-item" data-step="4">
+                            <div class="step-header">
+                                <div class="step-number">4</div>
+                                <h4>放大图片</h4>
+                            </div>
+                            <div class="step-content">
+                                <div class="image-with-caption">
+                                    <img src="images/extracted/如何放大-放大图片1.png" alt="放大图片1" class="guide-image" onclick="ImageViewer.open(this.src)">
+                                    <p class="image-caption">🖼️ 放大图片 - 步骤1</p>
+                                </div>
+                                <div class="image-with-caption">
+                                    <img src="images/extracted/如何放大-放大图片2.png" alt="放大图片2" class="guide-image" onclick="ImageViewer.open(this.src)">
+                                    <p class="image-caption">🖼️ 放大图片 - 步骤2</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 日常篇 - 极简模式 -->
+            <section class="content-section" id="simple-mode" data-section="simple-mode" style="display: none;">
+                <div class="section-header">
+                    <span class="section-icon">📱</span>
+                    <h2 class="section-title">极简模式</h2>
+                </div>
+                <div class="section-content">
+                    <div class="section-intro">
+                        <p>开启极简模式，让手机界面更简洁，操作更简单。</p>
+                    </div>
+                    <div class="step-guide">
+                        <div class="step-item" data-step="1">
+                            <div class="step-header">
+                                <div class="step-number">1</div>
+                                <h4>开启极简模式</h4>
+                            </div>
+                            <div class="step-content">
+                                <div class="image-with-caption">
+                                    <img src="images/extracted/极简模式1.png" alt="极简模式1" class="guide-image" onclick="ImageViewer.open(this.src)">
+                                    <p class="image-caption">📱 极简模式 - 步骤1</p>
+                                </div>
+                                <div class="image-with-caption">
+                                    <img src="images/extracted/极简模式2.png" alt="极简模式2" class="guide-image" onclick="ImageViewer.open(this.src)">
+                                    <p class="image-caption">📱 极简模式 - 步骤2</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step-item" data-step="2">
+                            <div class="step-header">
+                                <div class="step-number">2</div>
+                                <h4>一键拨号</h4>
+                            </div>
+                            <div class="step-content">
+                                <div class="image-with-caption">
+                                    <img src="images/extracted/极简模式-一键拨号1.png" alt="一键拨号1" class="guide-image" onclick="ImageViewer.open(this.src)">
+                                    <p class="image-caption">📞 一键拨号 - 步骤1</p>
+                                </div>
+                                <div class="image-with-caption">
+                                    <img src="images/extracted/极简模式-一键拨号2.png" alt="一键拨号2" class="guide-image" onclick="ImageViewer.open(this.src)">
+                                    <p class="image-caption">📞 一键拨号 - 步骤2</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 日常篇 - 储存联系人 -->
+            <section class="content-section" id="contacts" data-section="contacts" style="display: none;">
+                <div class="section-header">
+                    <span class="section-icon">👥</span>
+                    <h2 class="section-title">储存联系人</h2>
+                </div>
+                <div class="section-content">
+                    <div class="section-intro">
+                        <p>学会储存联系人，让打电话更方便快捷。</p>
+                    </div>
+                    <div class="step-guide">
+                        <div class="step-item" data-step="1">
+                            <div class="step-header">
+                                <div class="step-number">1</div>
+                                <h4>添加电话号码</h4>
+                            </div>
+                            <div class="step-content">
+                                <div class="image-with-caption">
+                                    <img src="images/extracted/储存联系人，打电话更方便-添加电话号码1.png" alt="添加电话号码1" class="guide-image" onclick="ImageViewer.open(this.src)">
+                                    <p class="image-caption">👥 添加联系人 - 步骤1</p>
+                                </div>
+                                <div class="image-with-caption">
+                                    <img src="images/extracted/储存联系人，打电话更方便-添加电话号码2.png" alt="添加电话号码2" class="guide-image" onclick="ImageViewer.open(this.src)">
+                                    <p class="image-caption">👥 添加联系人 - 步骤2</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 日常篇 - 保存通话记录 -->
+            <section class="content-section" id="save-calls" data-section="save-calls" style="display: none;">
+                <div class="section-header">
+                    <span class="section-icon">📞</span>
+                    <h2 class="section-title">保存通话记录</h2>
+                </div>
+                <div class="section-content">
+                    <div class="section-intro">
+                        <p>将接过的电话储存到联系人，方便下次拨打。</p>
+                    </div>
+                    <div class="image-with-caption">
+                        <img src="images/extracted/接过的电话怎样储存1.png" alt="保存通话记录1" class="guide-image" onclick="ImageViewer.open(this.src)">
+                        <p class="image-caption">📞 保存通话记录 - 步骤1</p>
+                    </div>
+                    <div class="image-with-caption">
+                        <img src="images/extracted/接过的电话怎样储存2.png" alt="保存通话记录2" class="guide-image" onclick="ImageViewer.open(this.src)">
+                        <p class="image-caption">📞 保存通话记录 - 步骤2</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 日常篇 - 软件下载卸载 -->
+            <section class="content-section" id="apps" data-section="apps" style="display: none;">
+                <div class="section-header">
+                    <span class="section-icon">📲</span>
+                    <h2 class="section-title">软件下载与卸载</h2>
+                </div>
+                <div class="section-content">
+                    <div class="step-guide">
+                        <div class="step-item" data-step="1">
+                            <div class="step-header">
+                                <div class="step-number">1</div>
+                                <h4>如何正确下载软件</h4>
+                            </div>
+                            <div class="step-content">
+                                <div class="image-with-caption">
+                                    <img src="images/extracted/软件下载卸载-如何正确下载软件1.png" alt="下载软件1" class="guide-image" onclick="ImageViewer.open(this.src)">
+                                    <p class="image-caption">⬇️ 下载软件 - 步骤1</p>
+                                </div>
+                                <div class="image-with-caption">
+                                    <img src="images/extracted/软件下载卸载-如何正确下载软件2.png" alt="下载软件2" class="guide-image" onclick="ImageViewer.open(this.src)">
+                                    <p class="image-caption">⬇️ 下载软件 - 步骤2</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step-item" data-step="2">
+                            <div class="step-header">
+                                <div class="step-number">2</div>
+                                <h4>如何卸载不常用的软件</h4>
+                            </div>
+                            <div class="step-content">
+                                <div class="image-with-caption">
+                                    <img src="images/extracted/软件下载卸载-如何卸载不常用的软件1.png" alt="卸载软件1" class="guide-image" onclick="ImageViewer.open(this.src)">
+                                    <p class="image-caption">🗑️ 卸载软件 - 步骤1</p>
+                                </div>
+                                <div class="image-with-caption">
+                                    <img src="images/extracted/软件下载卸载-如何卸载不常用的软件2.png" alt="卸载软件2" class="guide-image" onclick="ImageViewer.open(this.src)">
+                                    <p class="image-caption">🗑️ 卸载软件 - 步骤2</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 日常篇 - 设置壁纸 -->
+            <section class="content-section" id="wallpaper" data-section="wallpaper" style="display: none;">
+                <div class="section-header">
+                    <span class="section-icon">🖼️</span>
+                    <h2 class="section-title">设置壁纸</h2>
+                </div>
+                <div class="section-content">
+                    <div class="section-intro">
+                        <p>给手机换上喜欢的壁纸，让手机更个性化。</p>
+                    </div>
+                    <div class="image-with-caption">
+                        <img src="images/extracted/怎样设置壁纸1.png" alt="设置壁纸1" class="guide-image" onclick="ImageViewer.open(this.src)">
+                        <p class="image-caption">🖼️ 设置壁纸 - 步骤1</p>
+                    </div>
+                    <div class="image-with-caption">
+                        <img src="images/extracted/怎样设置壁纸2.png" alt="设置壁纸2" class="guide-image" onclick="ImageViewer.open(this.src)">
+                        <p class="image-caption">🖼️ 设置壁纸 - 步骤2</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 日常篇 - 小爱同学 -->
+            <section class="content-section" id="xiaoai" data-section="xiaoai" style="display: none;">
+                <div class="section-header">
+                    <span class="section-icon">🎙️</span>
+                    <h2 class="section-title">小爱同学 - 智能语音助手</h2>
+                </div>
+                <div class="section-content">
+                    <div class="section-intro">
+                        <p>使用小爱同学语音助手，动动嘴就能完成操作。</p>
+                    </div>
+                    <div class="image-with-caption">
+                        <img src="images/extracted/小爱同学-智能语音助手1.png" alt="小爱同学1" class="guide-image" onclick="ImageViewer.open(this.src)">
+                        <p class="image-caption">🎙️ 使用小爱同学 - 步骤1</p>
+                    </div>
+                    <div class="image-with-caption">
+                        <img src="images/extracted/小爱同学-智能语音助手2.png" alt="小爱同学2" class="guide-image" onclick="ImageViewer.open(this.src)">
+                        <p class="image-caption">🎙️ 使用小爱同学 - 步骤2</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 日常篇 - 省电模式 -->
+            <section class="content-section" id="battery-save" data-section="battery-save" style="display: none;">
+                <div class="section-header">
+                    <span class="section-icon">🔋</span>
+                    <h2 class="section-title">开启省电模式</h2>
+                </div>
+                <div class="section-content">
+                    <div class="section-intro">
+                        <p>开启省电模式，延长手机使用时间。</p>
+                    </div>
+                    <div class="image-with-caption">
+                        <img src="images/extracted/如何开启省电模式1.png" alt="省电模式1" class="guide-image" onclick="ImageViewer.open(this.src)">
+                        <p class="image-caption">🔋 开启省电模式 - 步骤1</p>
+                    </div>
+                    <div class="image-with-caption">
+                        <img src="images/extracted/如何开启省电模式2.png" alt="省电模式2" class="guide-image" onclick="ImageViewer.open(this.src)">
+                        <p class="image-caption">🔋 开启省电模式 - 步骤2</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 日常篇 - 手电筒 -->
+            <section class="content-section" id="flashlight" data-section="flashlight" style="display: none;">
+                <div class="section-header">
+                    <span class="section-icon">🔦</span>
+                    <h2 class="section-title">手电筒功能</h2>
+                </div>
+                <div class="section-content">
+                    <div class="section-intro">
+                        <p>环境昏暗时，打开手电筒功能照明。</p>
+                    </div>
+                    <div class="image-with-caption">
+                        <img src="images/extracted/环境昏暗，打开手电筒功能-手电筒功能.png" alt="手电筒功能" class="guide-image" onclick="ImageViewer.open(this.src)">
+                        <p class="image-caption">🔦 使用手电筒</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 日常篇 - 清理手机垃圾 -->
+            <section class="content-section" id="clean" data-section="clean" style="display: none;">
+                <div class="section-header">
+                    <span class="section-icon">🧹</span>
+                    <h2 class="section-title">清理手机垃圾</h2>
+                </div>
+                <div class="section-content">
+                    <div class="section-intro">
+                        <p>手机内存告急时，学会清理垃圾文件。</p>
+                    </div>
+                    <div class="image-with-caption">
+                        <img src="images/extracted/清理手机垃圾-手机内存告急1.png" alt="清理垃圾1" class="guide-image" onclick="ImageViewer.open(this.src)">
+                        <p class="image-caption">🧹 清理手机垃圾 - 步骤1</p>
+                    </div>
+                    <div class="image-with-caption">
+                        <img src="images/extracted/清理手机垃圾-手机内存告急2.png" alt="清理垃圾2" class="guide-image" onclick="ImageViewer.open(this.src)">
+                        <p class="image-caption">🧹 清理手机垃圾 - 步骤2</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 出行篇 -->
+            <section class="content-section" id="navigation" data-section="navigation" style="display: none;">
+                <div class="section-header">
+                    <span class="section-icon">🗺️</span>
+                    <h2 class="section-title">查询路线</h2>
+                </div>
+                <div class="section-content">
+                    <div class="image-with-caption">
+                        <img src="images/extracted/查询路线1.png" alt="查询路线1" class="guide-image" onclick="ImageViewer.open(this.src)">
+                        <p class="image-caption">🗺️ 查询路线 - 步骤1</p>
+                    </div>
+                    <div class="image-with-caption">
+                        <img src="images/extracted/查询路线2.png" alt="查询路线2" class="guide-image" onclick="ImageViewer.open(this.src)">
+                        <p class="image-caption">🗺️ 查询路线 - 步骤2</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section" id="transport" data-section="transport" style="display: none;">
+                <div class="section-header">
+                    <span class="section-icon">🚌</span>
+                    <h2 class="section-title">乘坐公交地铁</h2>
+                </div>
+                <div class="section-content">
+                    <div class="image-with-caption">
+                        <img src="images/extracted/乘坐公交地铁1.png" alt="乘坐公交地铁1" class="guide-image" onclick="ImageViewer.open(this.src)">
+                        <p class="image-caption">🚌 乘坐公交地铁 - 步骤1</p>
+                    </div>
+                    <div class="image-with-caption">
+                        <img src="images/extracted/乘坐公交地铁2.png" alt="乘坐公交地铁2" class="guide-image" onclick="ImageViewer.open(this.src)">
+                        <p class="image-caption">🚌 乘坐公交地铁 - 步骤2</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section" id="store" data-section="store" style="display: none;">
+                <div class="section-header">
+                    <span class="section-icon">🏪</span>
+                    <h2 class="section-title">查询小米门店</h2>
+                </div>
+                <div class="section-content">
+                    <div class="image-with-caption">
+                        <img src="images/extracted/怎样查询小米门店1.png" alt="查询门店1" class="guide-image" onclick="ImageViewer.open(this.src)">
+                        <p class="image-caption">🏪 查询小米门店 - 步骤1</p>
+                    </div>
+                    <div class="image-with-caption">
+                        <img src="images/extracted/怎样查询小米门店2.png" alt="查询门店2" class="guide-image" onclick="ImageViewer.open(this.src)">
+                        <p class="image-caption">🏪 查询小米门店 - 步骤2</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 拍照篇 -->
+            <section class="content-section" id="camera" data-section="camera" style="display: none;">
+                <div class="section-header">
+                    <span class="section-icon">📷</span>
+                    <h2 class="section-title">相机使用</h2>
+                </div>
+                <div class="section-content">
+                    <div class="section-intro">
+                        <p>了解相机主界面，学会使用人像功能拍照。</p>
+                    </div>
+                    <div class="image-with-caption">
+                        <img src="images/extracted/拍照小技巧-相机主界面.png" alt="相机主界面" class="guide-image" onclick="ImageViewer.open(this.src)">
+                        <p class="image-caption">📷 相机主界面介绍</p>
+                    </div>
+                    <div class="image-with-caption">
+                        <img src="images/extracted/拍照小技巧-开启人像功能，拍照更好看.png" alt="人像功能" class="guide-image" onclick="ImageViewer.open(this.src)">
+                        <p class="image-caption">👤 开启人像功能，拍照更好看</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section" id="photo-tips" data-section="photo-tips" style="display: none;">
+                <div class="section-header">
+                    <span class="section-icon">📸</span>
+                    <h2 class="section-title">拍照小技巧</h2>
+                </div>
+                <div class="section-content">
+                    <div class="tips-grid">
+                        <div class="tip-card">
+                            <div class="tip-header">
+                                <span class="tip-icon">🏃</span>
+                                <h4>运动抓拍</h4>
+                            </div>
+                            <div class="image-with-caption">
+                                <img src="images/extracted/拍照小技巧-运动抓拍功能.png" alt="运动抓拍" class="guide-image" onclick="ImageViewer.open(this.src)">
+                                <p class="image-caption">🏃 运动抓拍功能</p>
+                            </div>
+                        </div>
+                        <div class="tip-card">
+                            <div class="tip-header">
+                                <span class="tip-icon">🖐️</span>
+                                <h4>超级防抖</h4>
+                            </div>
+                            <div class="image-with-caption">
+                                <img src="images/extracted/拍照小技巧-超级防抖功能.png" alt="超级防抖" class="guide-image" onclick="ImageViewer.open(this.src)">
+                                <p class="image-caption">🖐️ 超级防抖功能</p>
+                            </div>
+                        </div>
+                        <div class="tip-card">
+                            <div class="tip-header">
+                                <span class="tip-icon">📝</span>
+                                <h4>提词器功能</h4>
+                            </div>
+                            <div class="image-with-caption">
+                                <img src="images/extracted/拍照小技巧-提词器功能.png" alt="提词器" class="guide-image" onclick="ImageViewer.open(this.src)">
+                                <p class="image-caption">📝 提词器功能</p>
+                            </div>
+                        </div>
+                        <div class="tip-card">
+                            <div class="tip-header">
+                                <span class="tip-icon">🏷️</span>
+                                <h4>照片水印</h4>
+                            </div>
+                            <div class="image-with-caption">
+                                <img src="images/extracted/拍照小技巧-照片水印功能.png" alt="照片水印" class="guide-image" onclick="ImageViewer.open(this.src)">
+                                <p class="image-caption">🏷️ 照片水印功能</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 微信篇 -->
+            <section class="content-section" id="wechat-friends" data-section="wechat-friends" style="display: none;">
+                <div class="section-header">
+                    <span class="section-icon">👥</span>
+                    <h2 class="section-title">添加微信好友</h2>
+                </div>
+                <div class="section-content">
+                    <div class="image-with-caption">
+                        <img src="images/extracted/学会用微信，和朋友们随时开聊-添加好友.png" alt="添加好友" class="guide-image" onclick="ImageViewer.open(this.src)">
+                        <p class="image-caption">👥 添加微信好友</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section" id="wechat-group" data-section="wechat-group" style="display: none;">
+                <div class="section-header">
+                    <span class="section-icon">💬</span>
+                    <h2 class="section-title">发起群聊</h2>
+                </div>
+                <div class="section-content">
+                    <div class="image-with-caption">
+                        <img src="images/extracted/学会用微信，和朋友们随时开聊-发起群聊.png" alt="发起群聊" class="guide-image" onclick="ImageViewer.open(this.src)">
+                        <p class="image-caption">💬 发起微信群聊</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section" id="wechat-dnd" data-section="wechat-dnd" style="display: none;">
+                <div class="section-header">
+                    <span class="section-icon">🔕</span>
+                    <h2 class="section-title">消息免打扰</h2>
+                </div>
+                <div class="section-content">
+                    <div class="image-with-caption">
+                        <img src="images/extracted/学会用微信，和朋友们随时开聊-消息免打扰.png" alt="消息免打扰" class="guide-image" onclick="ImageViewer.open(this.src)">
+                        <p class="image-caption">🔕 设置消息免打扰</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section" id="wechat-blacklist" data-section="wechat-blacklist" style="display: none;">
+                <div class="section-header">
+                    <span class="section-icon">🚫</span>
+                    <h2 class="section-title">黑名单功能</h2>
+                </div>
+                <div class="section-content">
+                    <div class="image-with-caption">
+                        <img src="images/extracted/学会用微信，和朋友们随时开聊-黑名单功能1.png" alt="黑名单1" class="guide-image" onclick="ImageViewer.open(this.src)">
+                        <p class="image-caption">🚫 黑名单功能 - 步骤1</p>
+                    </div>
+                    <div class="image-with-caption">
+                        <img src="images/extracted/学会用微信，和朋友们随时开聊-黑名单功能2.png" alt="黑名单2" class="guide-image" onclick="ImageViewer.open(this.src)">
+                        <p class="image-caption">🚫 黑名单功能 - 步骤2</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section" id="wechat-call" data-section="wechat-call" style="display: none;">
+                <div class="section-header">
+                    <span class="section-icon">📹</span>
+                    <h2 class="section-title">视频通话与语音通话</h2>
+                </div>
+                <div class="section-content">
+                    <div class="image-with-caption">
+                        <img src="images/extracted/学会用微信，和朋友们随时开聊-视频通话语音通话1.png" alt="视频通话1" class="guide-image" onclick="ImageViewer.open(this.src)">
+                        <p class="image-caption">📹 视频/语音通话 - 步骤1</p>
+                    </div>
+                    <div class="image-with-caption">
+                        <img src="images/extracted/学会用微信，和朋友们随时开聊-视频通话语音通话2.png" alt="视频通话2" class="guide-image" onclick="ImageViewer.open(this.src)">
+                        <p class="image-caption">📹 视频/语音通话 - 步骤2</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section" id="wechat-redpacket" data-section="wechat-redpacket" style="display: none;">
+                <div class="section-header">
+                    <span class="section-icon">🧧</span>
+                    <h2 class="section-title">发红包</h2>
+                </div>
+                <div class="section-content">
+                    <div class="image-with-caption">
+                        <img src="images/extracted/学会用微信，和朋友们随时开聊-发红包1.png" alt="发红包1" class="guide-image" onclick="ImageViewer.open(this.src)">
+                        <p class="image-caption">🧧 发红包 - 步骤1</p>
+                    </div>
+                    <div class="image-with-caption">
+                        <img src="images/extracted/学会用微信，和朋友们随时开聊-发红包2.png" alt="发红包2" class="guide-image" onclick="ImageViewer.open(this.src)">
+                        <p class="image-caption">🧧 发红包 - 步骤2</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 支付篇 -->
+            <section class="content-section" id="wechat-pay" data-section="wechat-pay" style="display: none;">
+                <div class="section-header">
+                    <span class="section-icon">💳</span>
+                    <h2 class="section-title">微信支付</h2>
+                </div>
+                <div class="section-content">
+                    <div class="image-with-caption">
+                        <img src="images/extracted/微信收款支付方式1.png" alt="微信支付1" class="guide-image" onclick="ImageViewer.open(this.src)">
+                        <p class="image-caption">💳 微信收款支付方式 - 步骤1</p>
+                    </div>
+                    <div class="image-with-caption">
+                        <img src="images/extracted/微信收款支付方式2.png" alt="微信支付2" class="guide-image" onclick="ImageViewer.open(this.src)">
+                        <p class="image-caption">💳 微信收款支付方式 - 步骤2</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section" id="alipay" data-section="alipay" style="display: none;">
+                <div class="section-header">
+                    <span class="section-icon">💰</span>
+                    <h2 class="section-title">支付宝支付</h2>
+                </div>
+                <div class="section-content">
+                    <div class="image-with-caption">
+                        <img src="images/extracted/支付宝收款支付方式1.png" alt="支付宝1" class="guide-image" onclick="ImageViewer.open(this.src)">
+                        <p class="image-caption">💰 支付宝收款支付方式 - 步骤1</p>
+                    </div>
+                    <div class="image-with-caption">
+                        <img src="images/extracted/支付宝收款支付方式2.png" alt="支付宝2" class="guide-image" onclick="ImageViewer.open(this.src)">
+                        <p class="image-caption">💰 支付宝收款支付方式 - 步骤2</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 安全篇 -->
+            <section class="content-section" id="block" data-section="block" style="display: none;">
+                <div class="section-header">
+                    <span class="section-icon">🛡️</span>
+                    <h2 class="section-title">来电拦截与短信拦截</h2>
+                </div>
+                <div class="section-content">
+                    <div class="image-with-caption">
+                        <img src="images/extracted/来电拦截短信拦截.png" alt="来电短信拦截" class="guide-image" onclick="ImageViewer.open(this.src)">
+                        <p class="image-caption">🛡️ 设置来电拦截和短信拦截</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section" id="guard" data-section="guard" style="display: none;">
+                <div class="section-header">
+                    <span class="section-icon">🔒</span>
+                    <h2 class="section-title">安全守护</h2>
+                </div>
+                <div class="section-content">
+                    <div class="image-with-caption">
+                        <img src="images/extracted/安全守护1.png" alt="安全守护1" class="guide-image" onclick="ImageViewer.open(this.src)">
+                        <p class="image-caption">🔒 安全守护 - 步骤1</p>
+                    </div>
+                    <div class="image-with-caption">
+                        <img src="images/extracted/安全守护2.png" alt="安全守护2" class="guide-image" onclick="ImageViewer.open(this.src)">
+                        <p class="image-caption">🔒 安全守护 - 步骤2</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section" id="anti-fraud" data-section="anti-fraud" style="display: none;">
+                <div class="section-header">
+                    <span class="section-icon">⚠️</span>
+                    <h2 class="section-title">国家反诈APP</h2>
+                </div>
+                <div class="section-content">
+                    <div class="image-with-caption">
+                        <img src="images/extracted/国家反诈APP.png" alt="国家反诈APP" class="guide-image" onclick="ImageViewer.open(this.src)">
+                        <p class="image-caption">⚠️ 下载和使用国家反诈APP</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section" id="gov-service" data-section="gov-service" style="display: none;">
+                <div class="section-header">
+                    <span class="section-icon">🏛️</span>
+                    <h2 class="section-title">国务院客户端 - 老年人服务专区</h2>
+                </div>
+                <div class="section-content">
+                    <div class="image-with-caption">
+                        <img src="images/extracted/国务院客户端-老年人服务专区1.png" alt="国务院客户端1" class="guide-image" onclick="ImageViewer.open(this.src)">
+                        <p class="image-caption">🏛️ 国务院客户端 - 步骤1</p>
+                    </div>
+                    <div class="image-with-caption">
+                        <img src="images/extracted/国务院客户端-老年人服务专区2.png" alt="国务院客户端2" class="guide-image" onclick="ImageViewer.open(this.src)">
+                        <p class="image-caption">🏛️ 国务院客户端 - 步骤2</p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- 底部导航 -->
+        <div class="bottom-nav" id="bottomNav">
+            <button class="nav-btn prev-btn" id="prevBtn">
+                <span class="nav-icon">◀</span>
+                <span class="nav-text">上一页</span>
+            </button>
+            <div class="page-indicator">
+                <span id="currentPage">1</span> / <span id="totalPages">25</span>
+            </div>
+            <button class="nav-btn next-btn" id="nextBtn">
+                <span class="nav-text">下一页</span>
+                <span class="nav-icon">▶</span>
+            </button>
+        </div>
+    </main>
+
+    <!-- 图片查看器模态框 -->
+    <div class="image-modal" id="imageModal" style="display: none;">
+        <div class="image-modal-content">
+            <button class="image-modal-close" onclick="ImageViewer.close()"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
+<button class="image-modal-zoom-in" onclick="ImageViewer.zoomIn()"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></button>
+            <button class="image-modal-zoom-out" onclick="ImageViewer.zoomOut()"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></button>
+            <div class="image-modal-wrapper">
+                <img src="" alt="查看大图" id="modalImage">
+            </div>
+            <div class="image-modal-caption" id="modalCaption"></div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
